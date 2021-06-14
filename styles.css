@@ -1,0 +1,9 @@
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Baloo Tammudu 2', cursive;;
+    font-size: 30px;
+    background-color: #c8dad3;
+  }
