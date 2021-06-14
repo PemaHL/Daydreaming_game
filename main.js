@@ -13,3 +13,17 @@ function draw() {
 function preload() {
 	game.preload();
 }
+
+function keyPressed() {
+	if (keyCode === 38) {
+		game.player.jump();
+	}
+    if (keyCode === 37) {
+        game.player.moveLeft();
+    }
+    if (keyCode === 39) {
+       game.player.moveRight();
+    }
+}
+
+//want to change to keyIsDown
