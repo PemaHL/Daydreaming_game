@@ -17,13 +17,12 @@ class Game {
         this.usefulObstImages = [
 			{ src: loadImage('../Assets/obstacleUseful/beer.png'), y: 0, speed: 2 },
 			{ src: loadImage('../Assets/obstacleUseful/club.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/coconut.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/cupcake.png'), y: 0, speed: 2 },
+			{ src: loadImage('../Assets/obstacleUseful/cherry.png'), y: 0, speed: 2 },
+			{ src: loadImage('../Assets/obstacleUseful/cupcake.jpg'), y: 0, speed: 2 },
 			{ src: loadImage('../Assets/obstacleUseful/euro.jpg'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/grapes.png'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/pizza.png'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/redWine.png'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/whiteWine.png'), y: 0, speed: 2 },
+            { src: loadImage('../Assets/obstacleUseful/pizza.jpg'), y: 0, speed: 2 },
+            { src: loadImage('../Assets/obstacleUseful/wine.jpg'), y: 0, speed: 2 }
+         
 		];
     }
 
@@ -41,13 +40,13 @@ draw() {
         obstacle.draw();
     })
     // we use array filter to remove coins that collide with the player from the array
-    this.obstacles = this.obstacles.filter(obstacle => {
-        if (obstacle.collision(this.player || (obstacle.x + obstacle.width) < 0)) {
-            return false;
-        } else {
-            return true
-        }
+   // this.obstacles = this.obstacles.filter(obstacle => {
+     //   if (obstacle.collision(this.player || (obstacle.x + obstacle.width) < 0)) {
+       //     return false;
+        //} else {
+          //  return true
+        //}
         // obstacle.collision(this.player);
-    })
+    //})
 }
 }

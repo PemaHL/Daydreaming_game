@@ -3,9 +3,11 @@ class Obstacle {
     constructor() {
        // this.image = image;
         this.x = (Math.random() * width) / 2.5;
-        this.y = (height);
-        this.width = 100;
-        this.height = 100;
+        this.y = 0;
+        this.width = 150;
+        this.height = 150;
+        this.index = Math.floor(Math.random() * 10)
+
     }
 
     collision(playerInfo) {
@@ -28,11 +30,12 @@ class Obstacle {
     }
 
     draw() {
-       // //this.y--; what does this mean?
-
+       image(game.usefulObstImages[this.index].src, this.x, this.y, 50, 50);
+       this.y++; 
         ////image(game.usefulObstImages, this.x, this.y, this.width, this.height);
-        game.usefulObstImages.forEach(function (img) {
-			image(img.src, img.x, 0, 50, 50);
-			})
+        //game.usefulObstImages.forEach(function (img) {
+		//	image(game.usefulObstImages[0].src, 100, 100, 50, 50);
+		//	}) 
+            console.log('goodies image');
     }
 }
