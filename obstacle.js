@@ -2,11 +2,12 @@
 class Obstacle {
     constructor() {
        // this.image = image;
-        this.x = (Math.random() * width) / 2.5;
+        this.x = (Math.random() * width);
         this.y = 0;
         this.width = 150;
         this.height = 150;
-        this.index = Math.floor(Math.random() * 10)
+        this.index = Math.floor(Math.random() * 7)
+      //  this.score = 0;
 
     }
 
@@ -20,14 +21,17 @@ class Obstacle {
 		const playerX = playerInfo.x + playerInfo.width / 2;
 		const playerY = playerInfo.y + playerInfo.height / 2;
 		// measure the distance between obstacle and player using the dist() function
-		if (dist(obstacleX, obstacleY, playerX, playerY) > 25) {
+		if (dist(obstacleX, obstacleY, playerX, playerY) > 50) {
 			return false;
 		} else {
 			// we have a collision
 			// increment score here
-			return true;
+            //console.log(this.score);
+            game.score += 1;
+            return true;
 		}
     }
+
 
     draw() {
        image(game.usefulObstImages[this.index].src, this.x, this.y, 50, 50);

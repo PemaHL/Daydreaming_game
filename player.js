@@ -35,15 +35,20 @@ class Player {
         }
     
     jump() {
+      if (timerValue > 0) {
         this.velocity = -10;  
+      }
     }
       
     moveLeft() {
+      if (timerValue > 0) {
        this.x -= 10;
+      }
     }
     
     moveRight() {
+      if (timerValue > 0) {
         this.x += 10;
+      }
     }
-
 }
