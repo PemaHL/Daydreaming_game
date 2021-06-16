@@ -24,11 +24,13 @@ class Obstacle {
 		if (dist(obstacleX, obstacleY, playerX, playerY) > 50) {
 			return false;
 		} else {
+      if (timerValue > 1 && game.score < 50)
 			// we have a collision
 			// increment score here
             //console.log(this.score);
-            game.score += 1;
-            return true;
+            {game.score += 1;
+            game.song.play();
+            return true;}
 		}
     }
 

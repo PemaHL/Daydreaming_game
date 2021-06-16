@@ -4,6 +4,7 @@ class Game {
    constructor() {
         this.backgroundImage;
         this.score = 0;
+        this.song;
     }
 
     setup() {
@@ -13,17 +14,21 @@ class Game {
     }
 
     preload() {
+        soundFormats('ogg');
+        this.song = loadSound('Assets/Music/jingles_PIZZI00.ogg');
         this.backgroundImage = loadImage('../Assets/background/Background.jpg');
         this.playerImage = loadImage('../Assets/player/Jump.gif');
         //add obstacles images
         this.usefulObstImages = [
 			{ src: loadImage('../Assets/obstacleUseful/beer.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/club.png'), y: 0, speed: 2 },
+			//{ src: loadImage('../Assets/obstacleUseful/club.png'), y: 0, speed: 2 },
 			{ src: loadImage('../Assets/obstacleUseful/cherry.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/cupcake.jpg'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/euro.jpg'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/pizza.jpg'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/wine.jpg'), y: 0, speed: 2 }
+			{ src: loadImage('../Assets/obstacleUseful/cupcake.png'), y: 0, speed: 2 },
+			{ src: loadImage('../Assets/obstacleUseful/euro_screen.png'), y: 0, speed: 2 },
+            { src: loadImage('../Assets/obstacleUseful/pizza_screen.png'), y: 0, speed: 2 },
+            { src: loadImage('../Assets/obstacleUseful/wineWhite.png'), y: 0, speed: 2 },
+            { src: loadImage('../Assets/obstacleUseful/wineRed.png'), y: 0, speed: 2 },
+            { src: loadImage('../Assets/obstacleUseful/cake.png'), y: 0, speed: 2 }
 		];
     }
 
@@ -32,7 +37,7 @@ draw() {
     this.background.draw();
     this.player.draw();
     //here logic for pushing the obstacles
-    if (frameCount % 60 === 0 && timerValue > 0) {
+    if (frameCount % 60 === 0) {
         this.obstacles.push(new Obstacle(this.usefulObstImages));
         console.log(this.obstacles);   
     } 
@@ -47,6 +52,7 @@ draw() {
         } else {
             return true;
             //Text("score:")
+            
         }
      obstacle.collision(this.player);
     })

@@ -21,34 +21,34 @@ class Player {
         if (this.y <= 0) {
             this.y = 0;
         }
-        this.x = constrain(this.x, 0, (width - 300))
+        this.x = constrain(this.x, 0, (width - this.width))
         
-            //if (keyIsDown (UP_ARROW)) {
-              //  this.velocity = -10;
-            //}
-            //if (keyIsDown (LEFT_ARROW)) {
-              //  this.x -= 10;
-            //}
-            //if (keyIsDown (RIGHT_ARROW)) {
-              //  this.x += 10;
-            //}
+            if (keyIsDown (38)) {
+                this.velocity = -10;
+            }
+            if (keyIsDown (37)) {
+                this.x -= 10;
+            }
+            if (keyIsDown (39)) {
+                this.x += 10;
+            }
         }
     
-    jump() {
-      if (timerValue > 0) {
-        this.velocity = -10;  
-      }
-    }
+    //jump() {
+      //if (timerValue > 0) {
+        //this.velocity = -10;  
+      //}
+    //}
       
-    moveLeft() {
-      if (timerValue > 0) {
-       this.x -= 10;
-      }
-    }
+    //moveLeft() {
+      //if (timerValue > 0) {
+       //this.x -= 10;
+      //}
+    //}
     
-    moveRight() {
-      if (timerValue > 0) {
-        this.x += 10;
-      }
-    }
+    //moveRight() {
+      //if (timerValue > 0) {
+        //this.x += 10;
+      //}
+    //}
 }
