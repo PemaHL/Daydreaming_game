@@ -6,7 +6,7 @@ class Player {
         this.x = 0;
         this.y = height - this.height;
         this.velocity = 0;
-        this.gravity = 0.6;
+        this.gravity = 0.9;
 
     }
     draw() {

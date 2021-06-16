@@ -1,13 +1,14 @@
 //where the main final functions would go
 const game = new Game();
 var timerValue = 120;
-//var song;
+var winMusic;
+var loseMusic;
 
 function preload() {
 	game.preload();
-   // soundFormats('ogg');
-    //song = loadSound('../Assets/Music/jingles_STEEL00.ogg');
-    
+    soundFormats('ogg');
+    winMusic = loadSound('../Assets/Music/win.ogg');
+    loseMusic = loadSound('../Assets/Music/lose.ogg');
 }
 
 function setup() {
@@ -27,17 +28,19 @@ function draw() {
      if (timerValue < 10) {
          text('0:0' + timerValue, width / 2, height / 2);
       }
-      if (game.score >= 100) {
+      if (game.score >= 50) {
           clear();
         textSize(60);
-        text('Hey winner, enjoy the weekend!', width / 2, height / 2);
         fill(187, 87, 65);
+        text('Hey winner, enjoy the weekend!', width / 2, height / 2);
+        winMusic.play().duration(2);
      }
       if (timerValue == 0 && game.score < 50) {
           clear();
         textSize(50);
+        fill(35, 117, 67);
         text('Oh well my friend, next time', width / 2, height / 2 );
-        fill('red');
+        loseMusic.play().duration(2);
       }
 }
 

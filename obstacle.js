@@ -15,13 +15,13 @@ class Obstacle {
         console.log('collision', playerInfo);
         console.log('collision', playerInfo);
 		// get the middle of the obstacle
-		const obstacleX = this.x + this.width / 2;
-		const obstacleY = this.y + this.height / 2;
+		const obstacleX = this.x + this.width;
+		const obstacleY = this.y + this.height;
 		// get the middle of the player
-		const playerX = playerInfo.x + playerInfo.width / 2;
-		const playerY = playerInfo.y + playerInfo.height / 2;
+		const playerX = playerInfo.x + playerInfo.width;
+		const playerY = playerInfo.y + playerInfo.height;
 		// measure the distance between obstacle and player using the dist() function
-		if (dist(obstacleX, obstacleY, playerX, playerY) > 50) {
+		if (dist(obstacleX, obstacleY, playerX, playerY) > 100) {
 			return false;
 		} else {
       if (timerValue > 1 && game.score < 50)
