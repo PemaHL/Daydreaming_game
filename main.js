@@ -30,6 +30,7 @@ function setup() {
 function draw() {
   clear();
   if (mode == 0) {
+    console.log(timerValue);
     text('Press ENTER to start', 325, 220);
     textSize(30);
     textAlign(CENTER, CENTER);
@@ -84,7 +85,7 @@ function keyPressed() {
 }
 
 function timeIt() {
-    if(timerValue > 0) {
+    if(timerValue > 0 && mode == 1) {
         timerValue--;
     }
     console.log('timer')
