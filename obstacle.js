@@ -2,10 +2,10 @@
 class Obstacle {
     constructor() {
        // this.image = image;
-        this.x = (Math.random() * width);
+        this.x = Math.floor((Math.random() * width));
         this.y = 0;
-        this.width = 150;
-        this.height = 150;
+        this.width = 25;
+        this.height = 25;
         this.index = Math.floor(Math.random() * 7)
       //  this.score = 0;
 
@@ -15,13 +15,13 @@ class Obstacle {
         console.log('collision', playerInfo);
         console.log('collision', playerInfo);
 		// get the middle of the obstacle
-		const obstacleX = this.x + this.width;
-		const obstacleY = this.y + this.height;
+		const obstacleX = this.x + this.width / 2;
+		const obstacleY = this.y + this.height / 2;
 		// get the middle of the player
-		const playerX = playerInfo.x + playerInfo.width;
-		const playerY = playerInfo.y + playerInfo.height;
+		const playerX = playerInfo.x + playerInfo.width / 2;
+		const playerY = playerInfo.y + playerInfo.height / 2;
 		// measure the distance between obstacle and player using the dist() function
-		if (dist(obstacleX, obstacleY, playerX, playerY) > 100) {
+		if (dist(obstacleX, obstacleY, playerX, playerY) > 60) {
 			return false;
 		} else {
       if (timerValue > 1 && game.score < 50)
@@ -36,7 +36,7 @@ class Obstacle {
 
 
     draw() {
-       image(game.usefulObstImages[this.index].src, this.x, this.y, 50, 50);
+       image(game.usefulObstImages[this.index].src, this.x, this.y, 25, 25);
        this.y++; 
         ////image(game.usefulObstImages, this.x, this.y, this.width, this.height);
         //game.usefulObstImages.forEach(function (img) {

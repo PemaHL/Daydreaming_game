@@ -2,10 +2,10 @@
 class ObstacleHarm {
     constructor() {
        // this.image = image;
-        this.x = (Math.random() * width);
+        this.x = Math.floor((Math.random() * width));
         this.y = height;
-        this.width = 100;
-        this.height = 100;
+        this.width = 50;
+        this.height = 50;
     }
 
     collision(playerInfo) {
@@ -18,7 +18,7 @@ class ObstacleHarm {
 		const playerX = playerInfo.x + playerInfo.width / 2;
 		const playerY = playerInfo.y + playerInfo.height / 2;
 		// measure the distance between obstacle and player using the dist() function
-		if (dist(obstacleX, obstacleY, playerX, playerY) > 150) {
+		if (dist(obstacleX, obstacleY, playerX, playerY) > 70) {
 			return false;
 		} else {
       if (timerValue > 1 && game.score < 50)
@@ -33,7 +33,7 @@ class ObstacleHarm {
 
 
     draw() {
-       image(game.harmfulObstImage[0].src, this.x, this.y, 100, 100);
+       image(game.harmfulObstImage[0].src, this.x, this.y, 50, 50);
        if(this.y > (height - this.height)) {
            this.y--;
        } else {

@@ -4,17 +4,21 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Baloo Tammudu 2', cursive;
-    font-size: 30px;
+    font-size: 15px;
     background-color: #c8dad3;
+    background-image: url('Assets/background/background_site.jpg');
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: 600px auto; 
   }
 
 #instructionBox {
   width: 20%;
   height: 100%;
   position: absolute;
-  top: 350px;
+  top: 300px;
   bottom: 0px;
-  left: 200px;
+  left: 130px;
   color: #237543;
 }
 

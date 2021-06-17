@@ -15,7 +15,7 @@ function preload() {
 
 function setup() {
     mode = 0;
-    createCanvas(1000, 1000);
+    createCanvas(650, 650);
     game.setup();
     textAlign(CENTER, CENTER);
     textSize(100);
@@ -30,8 +30,8 @@ function setup() {
 function draw() {
   clear();
   if (mode == 0) {
-    text('Press ENTER to start', 500, 500);
-    textSize(50);
+    text('Press ENTER to start', 325, 220);
+    textSize(30);
     textAlign(CENTER, CENTER);
     fill(187, 87, 65);
   }
@@ -48,16 +48,16 @@ function draw() {
       }
       if (game.score >= 50) {
           clear();
-        textSize(60);
+        textSize(30);
         fill(187, 87, 65);
-        text('Hey winner, enjoy the weekend!', width / 2, height / 2);
+        text('Hey winner, enjoy the weekend!', width / 2, height / 3);
         winMusic.play().duration(2);
      }
       if (timerValue == 0 && game.score < 50) {
           clear();
-        textSize(50);
+        textSize(25);
         fill(35, 117, 67);
-        text('Oh well my friend, next time', width / 2, height / 2 );
+        text('Oh well my friend, next time', width / 2, height / 3 );
         loseMusic.play().duration(2);
       }
     }
