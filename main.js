@@ -64,11 +64,18 @@ function draw() {
     }
 }
 
-
+function keyPressed() {
+  if (keyCode === ENTER) {
+    mode = 1;
+  }
+  if (keyCode === 38) {
+		game.player.jump();
+  }
+}
 
 //function keyPressed() {
-//	if (keyCode === 38) {
-//		game.player.jump();
+	//if (keyCode === 38) {
+		//game.player.jump();
 	//}
     //if (keyCode === 37) {
       //  game.player.moveLeft();
@@ -78,11 +85,6 @@ function draw() {
     //}
 //}
 
-function keyPressed() {
-  if (keyCode === ENTER) {
-    mode = 1;
-  }
-}
 
 function timeIt() {
     if(timerValue > 0 && mode == 1) {

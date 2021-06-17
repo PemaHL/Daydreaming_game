@@ -23,9 +23,9 @@ class Player {
         }
         this.x = constrain(this.x, 0, (width - this.width))
         
-            if (keyIsDown (38)) {
-                this.velocity = -10;
-            }
+            //if (keyIsDown (38)) {
+              //  this.velocity = -10;
+            //}
             if (keyIsDown (37)) {
                 this.x -= 10;
             }
@@ -34,11 +34,11 @@ class Player {
             }
         }
     
-    //jump() {
-      //if (timerValue > 0) {
-        //this.velocity = -10;  
-      //}
-    //}
+    jump() {
+      if (timerValue > 0) {
+        this.velocity = -10;  
+      }
+    }
       
     //moveLeft() {
       //if (timerValue > 0) {
