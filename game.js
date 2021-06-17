@@ -19,20 +19,20 @@ class Game {
         soundFormats('ogg');
         this.song = loadSound('Assets/Music/high.ogg');
         this.secondSong = loadSound('Assets/Music/low.ogg');
-        this.backgroundImage = loadImage('../Assets/background/Background.jpg');
-        this.playerImage = loadImage('../Assets/player/Jump.gif');
-        this.harmfulObstImage = [{src: loadImage('../Assets/obstacleHarmful/tree.png'), y: height, speed: 4}]
+        this.backgroundImage = loadImage('Assets/background/Background.jpg');
+        this.playerImage = loadImage('Assets/player/Jump.gif');
+        this.harmfulObstImage = [{src: loadImage('Assets/obstacleHarmful/tree.png'), y: height, speed: 4}]
         //add obstacles images
         this.usefulObstImages = [
-			{ src: loadImage('../Assets/obstacleUseful/beer.png'), y: 0, speed: 2 },
+			{ src: loadImage('Assets/obstacleUseful/beer.png'), y: 0, speed: 2 },
 			//{ src: loadImage('../Assets/obstacleUseful/club.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/cherry.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/cupcake.png'), y: 0, speed: 2 },
-			{ src: loadImage('../Assets/obstacleUseful/euro_screen.png'), y: 0, speed: 2 },
+			{ src: loadImage('Assets/obstacleUseful/cherry.png'), y: 0, speed: 2 },
+			{ src: loadImage('Assets/obstacleUseful/cupcake.png'), y: 0, speed: 2 },
+			{ src: loadImage('Assets/obstacleUseful/euro_screen.png'), y: 0, speed: 2 },
             //{ src: loadImage('../Assets/obstacleUseful/pizza_screen.png'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/wineWhite.png'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/wineRed.png'), y: 0, speed: 2 },
-            { src: loadImage('../Assets/obstacleUseful/cake.png'), y: 0, speed: 2 }
+            { src: loadImage('Assets/obstacleUseful/wineWhite.png'), y: 0, speed: 2 },
+            { src: loadImage('Assets/obstacleUseful/wineRed.png'), y: 0, speed: 2 },
+            { src: loadImage('Assets/obstacleUseful/cake.png'), y: 0, speed: 2 }
 		];
     }
 
