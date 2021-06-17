@@ -9,8 +9,8 @@ var mode;
 function preload() {
 	game.preload();
     soundFormats('ogg');
-    winMusic = loadSound('../Assets/Music/win.ogg');
-    loseMusic = loadSound('../Assets/Music/lose.ogg');
+    winMusic = loadSound('Assets/Music/win.ogg');
+    loseMusic = loadSound('Assets/Music/lose.ogg');
 }
 
 function setup() {
