@@ -3,6 +3,8 @@ const game = new Game();
 var timerValue = 120;
 var winMusic;
 var loseMusic;
+var button;
+var mode;
 
 function preload() {
 	game.preload();
@@ -12,21 +14,37 @@ function preload() {
 }
 
 function setup() {
+    mode = 0;
     createCanvas(1000, 1000);
     game.setup();
     textAlign(CENTER, CENTER);
     textSize(100);
     setInterval(timeIt, 1000);
+    //button = createButton('Click to play');
+    //button.position(0, 0);
+    //button.mousePressed(start);
    // song.play();
 }
 
+
 function draw() {
+  clear();
+  if (mode == 0) {
+    text('Press ENTER to start', 500, 500);
+    textSize(50);
+    textAlign(CENTER, CENTER);
+    fill(187, 87, 65);
+  }
+
+  if (mode == 1) {
     game.draw();
     if (timerValue <= 60 && timerValue >= 10) {
         text("0:" +timerValue, width / 2, height / 2);
+        fill('black')
       }
      if (timerValue < 10) {
          text('0:0' + timerValue, width / 2, height / 2);
+         fill('red')
       }
       if (game.score >= 50) {
           clear();
@@ -42,6 +60,7 @@ function draw() {
         text('Oh well my friend, next time', width / 2, height / 2 );
         loseMusic.play().duration(2);
       }
+    }
 }
 
 
@@ -57,6 +76,12 @@ function draw() {
       // game.player.moveRight();
     //}
 //}
+
+function keyPressed() {
+  if (keyCode === ENTER) {
+    mode = 1;
+  }
+}
 
 function timeIt() {
     if(timerValue > 0) {
